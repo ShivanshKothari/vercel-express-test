@@ -1,9 +1,9 @@
 import express from 'express';
+import indexRouter from 'routes/index.js';
 
-const router = express.Router();
+const app = express();
+const port = 3000;
 
-router.get('/', (req, res) => {
-    res.send('Welcome');
-});
+app.use('/', indexRouter);
 
-export default router;
+app.listen(port);
